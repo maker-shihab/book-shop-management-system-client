@@ -1,0 +1,35 @@
+.card-one{
+    background-image: url("../../assets/img/cart1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-three{
+    background-image: url("../../assets/img/cart2.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.card-four{
+    background-image: url("../../assets/img/cart3.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-five{
+    background-image: url("../../assets/img/cart4.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.card-six{
+    background-image: url("../../assets/img/cart5.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
