@@ -21,8 +21,8 @@ const About = () => {
                             <div className="card-body">
                                 <h2 className="card-title">Tahfimuzzaman</h2>
                                 <h4 className=""><span className="font-semibold">Position:</span> Lecturer</h4>
-                                <p>Click the button to watch on Jetflix app.</p>
-                                {/* <h4 className=""><span className="font-semibold">Email:</span><Link to="/about">md.tahfimuzzaman@g.bracu.ac.bd</Link></h4> */}
+                                <span className="font-semibold text-sm pt-2">European University of Bangladesh</span> 
+                                <p className="text-sm"><span className="font-semibold">Email:</span><br /> <small>md.tahfimuzzaman@g.bracu.ac.bd</small></p>
                                 <div className="card-actions justify-end">
                                     <button className="btn">View Profile</button>
                                 </div>
@@ -40,7 +40,9 @@ const About = () => {
                             <figure className="max-w-60 w-full h-full"><img className="w-full h-full" src="https://i.ibb.co/2sqRVMm/profile.png" alt="Movie" /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">Maker Shihab</h2>
-                                <p>Click the button to watch on Jetflix app.</p>
+                                <p className=""><span className="font-semibold">ID:</span> 220322055</p>
+                                <span className="font-semibold text-sm pt-2">European University of Bangladesh</span> 
+                                <p className="text-sm"><span className="font-semibold">Email:</span><br /> <small>shihabud696@gmail.com</small></p>
                                 <div className="card-actions justify-end">
                                     <button className="btn">View Profile</button>
                                 </div>
@@ -52,9 +54,11 @@ const About = () => {
                             <figure className="max-w-60 w-full h-full"><img className="w-full h-full" src="https://i.ibb.co/Hp1F9cq/350114412-817067836018364-5485198509355432945-n.jpg" alt="Movie" /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">Tariful Islam</h2>
-                                <p>Click the button to watch on Jetflix app.</p>
+                                <p className=""><span className="font-semibold">ID:</span> 220322020</p>
+                                <span className="font-semibold text-sm pt-2">European University of Bangladesh</span> 
+                                <p className="text-sm"><span className="font-semibold">Email:</span><br /> <small>mdtarifulislam@gmail.com</small></p>
                                 <div className="card-actions justify-end">
-                                    <button className="btn ">View Profile</button>
+                                    <button className="btn">View Profile</button>
                                 </div>
                             </div>
                         </div>
@@ -62,9 +66,11 @@ const About = () => {
                             <figure className="max-w-60 w-full h-full"><img className="w-full h-full" src="https://i.ibb.co/GTgCQgW/Whats-App-Image-2024-03-24-at-05-31-06-8e49c96b.jpg" alt="Movie" /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">Nizam Ohahed</h2>
-                                <p>Click the button to watch on Jetflix app.</p>
+                                <p className=""><span className="font-semibold">ID:</span> 220322067</p>
+                                <span className="font-semibold text-sm pt-2">European University of Bangladesh</span> 
+                                <p className="text-sm"><span className="font-semibold">Email:</span><br /> <small>nizamohahednayeem@gmail.com</small></p>
                                 <div className="card-actions justify-end">
-                                    <button className="btn ">View Profile</button>
+                                    <button className="btn">View Profile</button>
                                 </div>
                             </div>
                         </div>
@@ -72,9 +78,11 @@ const About = () => {
                             <figure className="max-w-60 w-full h-full"><img className="w-full h-full" src="https://i.ibb.co/XXRjhST/JUBLI.png" alt="Movie" /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">Jubli Rahman</h2>
-                                <p>Click the button to watch on Jetflix app.</p>
+                                <p className=""><span className="font-semibold">ID:</span> 220322029</p>
+                                <span className="font-semibold text-sm pt-2">European University of Bangladesh</span> 
+                                <p className="text-sm"><span className="font-semibold">Email:</span><br /> <small>jublirahman057@gmail.com</small></p>
                                 <div className="card-actions justify-end">
-                                    <button className="btn ">View Profile</button>
+                                    <button className="btn">View Profile</button>
                                 </div>
                             </div>
                         </div>
@@ -82,19 +90,24 @@ const About = () => {
                             <figure className="max-w-60 w-full h-full"><img className="w-full h-full" src="https://i.ibb.co/CzffRwC/Whats-App-Image-2024-03-24-at-05-27-27-843f54ae.jpg" alt="Movie" /></figure>
                             <div className="card-body">
                                 <h2 className="card-title">Rejouanul Kabir</h2>
-                                <p>Click the button to watch on Jetflix app.</p>
+                                <p className=""><span className="font-semibold">ID:</span> 220322042</p>
+                                <span className="font-semibold text-sm pt-2">European University of Bangladesh</span> 
+                                <p className="text-sm"><span className="font-semibold">Email:</span><br /> <small>nishadrasel@gmail.com</small></p>
                                 <div className="card-actions justify-end">
-                                    <button className="btn ">View Profile</button>
+                                    <button className="btn">View Profile</button>
                                 </div>
                             </div>
                         </div>
                         <div className="card card-side bg-base-100 shadow-xl">
-                            <figure className="max-w-60 w-full h-full"><img className="w-full h-full" src="https://i.ibb.co/vZ9jrfX/Whats-App-Image-2024-03-24-at-11-13-05-7c736ecc.jpg" alt="Movie" /></figure>
+                            <figure className="w-64 h-72"><img className="w-full h-full object-cover" src="https://i.ibb.co/vZ9jrfX/Whats-App-Image-2024-03-24-at-11-13-05-7c736ecc.jpg" alt="Movie" /></figure>
                             <div className="card-body">
-                                <h2 className="card-title">Sultana Kamrunnahar</h2>
-                                <p>Click the button to watch on Jetflix app.</p>
+                                <h2 className="card-title text-lg">Sultana Kamrunnahar</h2>
+                                <p className=""><span className="font-semibold">ID:</span> 190222047</p>
+                                <span className="font-semibold text-sm pt-2">European University of Bangladesh</span> 
+                                <p className="text-sm"><span className="font-semibold">Email:</span><br /> 
+                                <small>sultanakamrunnaharprety@gmail.com</small></p>
                                 <div className="card-actions justify-end">
-                                    <button className="btn ">View Profile</button>
+                                    <button className="btn">View Profile</button>
                                 </div>
                             </div>
                         </div>

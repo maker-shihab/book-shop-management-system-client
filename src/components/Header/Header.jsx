@@ -3,14 +3,19 @@ import { VscAccount } from "react-icons/vsc";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 
 import { MdOutlineFavoriteBorder } from "react-icons/md";
-import { RiShoppingBagLine } from "react-icons/ri";
 
 
+import { useContext } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { TiShoppingCart } from "react-icons/ti";
 import logo from '../../assets/img/avater.png';
+import { CartContext } from "../../contexts/CartContext";
+import { WishlistContext } from "../../contexts/WishlistContext";
 import useAuth from "../../hooks/useAuth";
 
 const Header = () => {
+    const { cartItems } = useContext(CartContext);
+    const { wishlistItems } = useContext(WishlistContext);
     const { userInfo, isLoggedIn, handleLogout } = useAuth();
     const navigate = useNavigate();
     const handleLogoutButton = () => {
@@ -99,12 +104,16 @@ const Header = () => {
                                     <h2 className=" ml-2 font-semibold">ACCOUND</h2>
                                 </div>
                                 <div className="flex items-center pr-2 border-r">
-                                    <span><RiShoppingBagLine /></span>
-                                    <h2 className=" ml-2 font-semibold">CART</h2>
+                                    <div className="indicator">
+                                        <span className="text-xl"><TiShoppingCart /></span>
+                                        <span className="badge badge-sm indicator-item">{cartItems?.length}</span>
+                                    </div>
                                 </div>
                                 <div className="flex items-center ">
-                                    <span><MdOutlineFavoriteBorder /></span>
-                                    <h2 className=" ml-2 font-semibold">WISHLIST</h2>
+                                    <div className="indicator">
+                                        <span className="text-xl"><MdOutlineFavoriteBorder /></span>
+                                        <span className="badge badge-sm indicator-item">{wishlistItems?.length}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
