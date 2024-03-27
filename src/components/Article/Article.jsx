@@ -65,7 +65,7 @@ const Article = () => {
                 </div>
             </div>
             <div className=' text-center py-6'>
-            <Link to="/blog" className=' btn  btn-outline'>Read all articles <span><FaLongArrowAltRight /></span></Link>
+            <Link to="/blogs" className=' btn  btn-outline'>Read all articles <span><FaLongArrowAltRight /></span></Link>
             </div>
              
         </div>

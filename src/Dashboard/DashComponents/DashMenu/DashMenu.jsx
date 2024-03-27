@@ -17,7 +17,7 @@ const DashMenu = ({ role }) => {
                     {menuItems.menuItems.map((menuItem, index) => (
                         <li key={index}>
                             {!menuItem.subItems ? (
-                                <a href={menuItem.link}>{menuItem.name}</a>
+                                <a href={menuItem.link} className='bg-slate-800'>{menuItem.name}</a>
                             ) : (
                                 <details>
                                     <summary>{menuItem.name}</summary>

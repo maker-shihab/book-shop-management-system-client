@@ -7,7 +7,7 @@ export const BookCard = ({ book }) => {
   return (
     <>
       <div className="card max-w-md w-full bg-base-100 shadow-xl">
-        <div className="text-center block">
+        <div className="text-center block pt-4">
           <figure className="min-h-36 max-w-40 mx-auto"><img className="h-100 w-100 object-cover" src={book?.bookCover} alt={book?.title} /></figure>
         </div>
         <div className="p-6 relative pb-20">

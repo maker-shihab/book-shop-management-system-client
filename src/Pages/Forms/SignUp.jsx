@@ -8,10 +8,11 @@ import Header from "../../components/Header/Header";
 import SocialLogin from "./SocialLogin";
 
 const SignUp = () => {
-    const navigate = useNavigate();
     const [formData, setFormData] = useState({});
     const [inputError, setInputError] = useState("");
     const [showPassword, setShowPassword] = useState(false);
+    
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const { name, value } = e.target;

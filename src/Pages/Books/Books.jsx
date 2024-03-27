@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import bookApi from "../../api/bookApi";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
-import BookCardTwo from "../../components/UI/BookCardTwo/BookCardTwo";
+import { BookCard } from "../../components/UI/BookCard/BookCard";
 
 const Books = () => {
     const [books, setBooks] = useState([]);
@@ -92,14 +92,13 @@ const Books = () => {
                     <div className="w-3/4">
                         <div className="grid grid-cols-2 lg:grid-cols-3 gap-x-4 gap-y-6">
                             {
-                                books.map((bookItem) => (
-                                    <BookCardTwo key={bookItem.id} bookItem={bookItem} />
+                                books.map((book) => (
+                                    <BookCard key={book._id} book={book} />
                                 ))
                             }
                         </div>
                     </div>
                 </div>
-                <Footer></Footer>
             </div>
             <Footer></Footer>
         </div>

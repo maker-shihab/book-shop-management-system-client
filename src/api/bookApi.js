@@ -6,15 +6,34 @@ export const bookApi = {
       url: `/books/new`,
       method: 'GET'
     }),
-    getFeaturedBook: async () =>
+  getFeaturedBook: async () =>
     axiosBaseQuery({
-      url: `/books/featured`,
+      url: `/books/featured/all`,
       method: 'GET'
     }),
+
   getAllBooks: async () =>
     axiosBaseQuery({
       url: `/books`,
       method: 'GET'
+    }),
+  getSingleBook: async (bookId) =>
+    axiosBaseQuery({
+      url: `/books/${bookId}`,
+      method: 'GET',
+      data: bookId
+    }),
+  getAllBooksBySeller: async (id) =>
+    axiosBaseQuery({
+      url: `/books/author/${id}`,
+      method: 'GET'
+    }),
+
+  addBook: async (credentials) =>
+    axiosBaseQuery({
+      url: `/books/create`,
+      method: 'POST',
+      data: credentials
     }),
 };
 

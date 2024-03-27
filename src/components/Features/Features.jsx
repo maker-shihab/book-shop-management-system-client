@@ -38,7 +38,7 @@ const Features = () => {
                      
                             <p className="text-[#6a6a6abb] py-2 text-xl ">Jump start your book reading by quickly check through the popular book categories. 1000+ books are published by different authors everyday. Buy your favourite books on TreeBooks Today.</p>
                             <div className=" py-11">
-                                <Link to={`/book/${featuredBooks[0]?._id}`} className=' btn  btn-outline '>View more <span><FaLongArrowAltRight /></span></Link>
+                                <Link to="/books" className=' btn  btn-outline '>View more <span><FaLongArrowAltRight /></span></Link>
                             </div>
                         </div>
                     </div>

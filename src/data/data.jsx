@@ -11,7 +11,7 @@ export const generalUserMenu = {
     },
     {
       "name": "Search Books",
-      "link": "/search"
+      "link": "/books"
     },
     {
       "name": "My Account",
@@ -73,7 +73,7 @@ export const donorMenu = {
     },
     {
       "name": "Search Books",
-      "link": "/search"
+      "link": "/books"
     },
     {
       "name": "Donate Books",
@@ -150,13 +150,9 @@ export const sellerMenu = {
           "link": "/books/add"
         },
         {
-          "name": "Edit Book Details",
-          "link": "/books/edit"
+          "name": "All Books",
+          "link": "/books/all"
         },
-        {
-          "name": "Delete Book",
-          "link": "/books/delete"
-        }
       ]
     },
     {

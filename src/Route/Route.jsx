@@ -1,8 +1,11 @@
 import { Route, Routes } from "react-router-dom";
 import DashLayout from "../Dashboard/DashLayout/DashLayout";
 import DashAddProduct from "../Dashboard/Pages/DashAddProduct/DashAddProduct";
+import DashAllProducts from "../Dashboard/Pages/DashAllProducts/DashAllProducts";
+import DashChangePass from "../Dashboard/Pages/DashChangePass/DashChangePass";
 import DashHome from "../Dashboard/Pages/DashHome/DashHome";
 import DashProducts from "../Dashboard/Pages/DashProducts/DashProducts";
+import DashUpdateProduct from "../Dashboard/Pages/DashUpdateProduct/DashUpdateProduct";
 import DashUsers from "../Dashboard/Pages/DashUsers/DashUsers";
 import Layout from '../Layout/Layout';
 import Blogs from "../Pages/Blog/Blogs";
@@ -28,7 +31,10 @@ const AppRouter = () => {
           <Route path="/dashboard" element={<DashHome />} />
           <Route path="/dashproducts" element={<DashProducts />} />
           <Route path="/dashusers" element={<DashUsers />} />
-          <Route path="/dashaddproduct" element={<DashAddProduct />} />
+          <Route path="/books/add" element={<DashAddProduct />} />
+          <Route path="/books/all" element={<DashAllProducts />} />  
+          <Route path="/book/edit/:id" element={<DashUpdateProduct />} />
+          <Route path="/profile/password" element={<DashChangePass />} />
         </Route> 
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />

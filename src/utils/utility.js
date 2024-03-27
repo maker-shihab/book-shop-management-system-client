@@ -1,11 +1,7 @@
-
-export const filterUserInfo = (userData) => {
-  const { email, role, ...basicInfo } = userData;
-  let userDetails = { ...basicInfo };
-  if (role === 'seller') {
-    userDetails = {role, email,...userData.seller };
-  } else if (role === 'donar') {
-    userDetails = {role, email, ...userData.donar };
-  }
-  return userDetails;
+const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  return date.toLocaleDateString('en-US', options);
 };
+
+export default formatDate;

@@ -19,14 +19,14 @@ const Header = () => {
         toast.success('User logout successfull!');
     }
     const navLinks = <>
-        <NavLink className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "  pb-1 border-b  border-white  font-semibold" : ""} to="/">HOME</NavLink>
-        <NavLink className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "  pb-1 border-b  border-white  font-semibold" : ""} to="/about">ABOUT US</NavLink>
-        <NavLink className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "  pb-1 border-b  border-white  font-semibold" : ""} to="/books">BOOKS</NavLink>
-        <NavLink className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "  pb-1 border-b  border-white  font-semibold" : ""} to="/contract">CONTRACT US</NavLink>
-        <NavLink className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "  pb-1 border-b  border-white  font-semibold" : ""} to="/blogs">BLOG</NavLink>
+        <NavLink className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "  pb-1 border-b  border-black text-black  font-semibold" : ""} to="/">HOME</NavLink>
+        <NavLink className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "  pb-1 border-b  border-black text-black font-semibold" : ""} to="/about">ABOUT US</NavLink>
+        <NavLink className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "  pb-1 border-b border-black text-black  font-semibold" : ""} to="/books">BOOKS</NavLink>
+        <NavLink className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "  pb-1 border-b border-black text-black font-semibold" : ""} to="/contract">CONTRACT US</NavLink>
+        <NavLink className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "  pb-1 border-b border-black text-black font-semibold" : ""} to="/blogs">BLOG</NavLink>
         {
             isLoggedIn ? (
-                <button type="button" onClick={handleLogoutButton} className="border-b  border-transparent font-semibold pb-1">
+                <button type="button" onClick={handleLogoutButton} className="border-b  border-transparent text-black font-semibold pb-1">
                     LOGOUT
                 </button>
             ) : (
@@ -79,7 +79,7 @@ const Header = () => {
                                     {
                                         isLoggedIn ? <>
                                             <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                                                <li><Link to="/profile">Profile</Link></li>
+                                                <li><Link to={`/profile`}>Profile</Link></li>
                                                 <li><Link to="/dashboard">Dashboard</Link></li>
                                                 <li><button type="button" onClick={handleLogoutButton}>Logout</button></li>
                                             </ul>
@@ -112,14 +112,14 @@ const Header = () => {
                 </div>
             </div>
 
-            <div className="bg-success">
-                <div className="navbar md:text-white  container mx-auto  px-0">
+            <div className="bg-[#dbebfd]">
+                <div className="navbar md:text-black  container mx-auto  px-0">
                     <div className="navbar-start">
                         <div className="dropdown">
                             <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                             </div>
-                            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 w-96  leading-7 h-48">
+                            <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow text-black w-96  leading-7 h-48">
                                 {navLinks}
                             </ul>
                         </div>

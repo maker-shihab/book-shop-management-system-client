@@ -6,13 +6,11 @@ import { removeUserInfo } from "../services/auth.service";
 import { logoutRequest } from "../services/logout.service";
 import { decodedToken } from "../utils/jwt";
 import { getLocalStorage, setToLocalStorage } from "../utils/local-storage";
-import { filterUserInfo } from "../utils/utility";
 
 const AuthContext = createContext();
 
 const AuthProvider = ({ children }) => {
   const [userInfo, setUserInfo] = useState(null);
-  const [userDetails, setUserDetails] = useState(null);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const fetchUserInfo = useCallback(async (accessToken) => {
@@ -20,8 +18,6 @@ const AuthProvider = ({ children }) => {
       const { userId } = decodedToken(accessToken);
       const response = await authApi.getUserProfile(userId);
       setUserInfo(response?.data?.data);
-      const userData = filterUserInfo(response?.data?.data);
-      setUserDetails(userData);
     } catch (error) {
       console.error(error);
     }
@@ -43,7 +39,6 @@ const AuthProvider = ({ children }) => {
       setIsLoggedIn(false);
       removeUserInfo(authKey);
       setUserInfo(null);
-      setUserDetails(null);
     } catch (error) {
       console.error("Logout error:", error);
     }
@@ -66,8 +61,7 @@ const AuthProvider = ({ children }) => {
     handleLogout,
     userInfo,
     setUserInfo,
-    userDetails
-  }), [handleLoginSuccess, handleLogout, isLoggedIn, userInfo, userDetails]);
+  }), [handleLoginSuccess, handleLogout, isLoggedIn, userInfo]);
 
   return (
     <AuthContext.Provider value={authContextValue}>
