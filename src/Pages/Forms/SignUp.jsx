@@ -1,18 +1,26 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import authApi from "../../api/authApi";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
+import useAuth from "../../hooks/useAuth";
 import SocialLogin from "./SocialLogin";
 
 const SignUp = () => {
     const [formData, setFormData] = useState({});
     const [inputError, setInputError] = useState("");
     const [showPassword, setShowPassword] = useState(false);
+    const { isLoggedIn } = useAuth();
     
     const navigate = useNavigate();
+
+    useEffect(() => {
+        if (isLoggedIn) {
+            navigate("/");
+        }
+    }, [isLoggedIn, navigate]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;

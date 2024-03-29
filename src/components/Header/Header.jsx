@@ -104,17 +104,17 @@ const Header = () => {
                                     <h2 className=" ml-2 font-semibold">ACCOUND</h2>
                                 </div>
                                 <div className="flex items-center pr-2 border-r">
-                                    <div className="indicator">
+                                    <Link to="/checkout" className="indicator cursor-pointer">
                                         <span className="text-xl"><TiShoppingCart /></span>
                                         <span className="badge badge-sm indicator-item">{cartItems?.length}</span>
-                                    </div>
+                                    </Link>
                                 </div>
-                                <div className="flex items-center ">
-                                    <div className="indicator">
+                                <Link className="flex items-center ">
+                                    <Link to="/wishlist" className="indicator">
                                         <span className="text-xl"><MdOutlineFavoriteBorder /></span>
                                         <span className="badge badge-sm indicator-item">{wishlistItems?.length}</span>
-                                    </div>
-                                </div>
+                                    </Link>
+                                </Link>
                             </div>
                         </div>
                     </div>

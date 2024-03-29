@@ -11,7 +11,7 @@ export const getUserInfo = () => {
   const authToken = getLocalStorage(authKey);
   if (authToken) {
     const decodeadData = decodedToken(authToken);
-    
+
     return decodeadData
   } else {
     return ""

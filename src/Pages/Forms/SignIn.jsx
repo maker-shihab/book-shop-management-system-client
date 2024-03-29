@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "./SocialLogin";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import authApi from "../../api/authApi";
 import sidePhoto from "../../assets/img/typeing.jpg";
@@ -11,7 +11,14 @@ import useAuth from "../../hooks/useAuth";
 
 const SignIn = () => {
     const navigate = useNavigate();
-    const { handleLoginSuccess } = useAuth();
+    const { handleLoginSuccess, isLoggedIn } = useAuth();
+
+    useEffect(() => {
+        if (isLoggedIn) {
+            navigate("/");
+        }
+    }, [isLoggedIn, navigate]);
+
 
     const [identifier, setIdentifier] = useState();
     const [password, setPassword] = useState();

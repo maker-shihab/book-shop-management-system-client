@@ -10,9 +10,11 @@ import DashUsers from "../Dashboard/Pages/DashUsers/DashUsers";
 import Layout from '../Layout/Layout';
 import Blogs from "../Pages/Blog/Blogs";
 import BookSingle from "../Pages/BookSingle/BookSingle";
+import Checkout from "../Pages/Checkout/Checkout";
 import SignIn from "../Pages/Forms/SignIn";
 import SignUp from "../Pages/Forms/SignUp";
 import NotFound from "../Pages/NotFound/NotFound";
+import Wishlist from "../Pages/Wishlist/Wishlist";
 import Profile from "../components/Profile/Profile";
 import About from './../Pages/About/About';
 import Books from './../Pages/Books/Books';
@@ -38,6 +40,8 @@ const AppRouter = () => {
         </Route> 
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/books" element={<Books />} />

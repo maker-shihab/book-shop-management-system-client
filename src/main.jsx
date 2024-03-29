@@ -1,4 +1,3 @@
-import React from 'react';
 import * as ReactDOM from "react-dom/client";
 import { BrowserRouter } from 'react-router-dom';
 import AppRouter from './Route/Route';
@@ -8,7 +7,7 @@ import { WishlistProvider } from './contexts/WishlistContext';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  // <React.StrictMode>
     <AuthProvider>
       <CartProvider>
         <WishlistProvider>
@@ -18,5 +17,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
         </WishlistProvider>
       </CartProvider>
     </AuthProvider>
-  </React.StrictMode>
+  // </React.StrictMode>
 );

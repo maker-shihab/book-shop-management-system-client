@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import { donorMenu, generalUserMenu, sellerMenu } from '../../../data/data';
 
 const DashMenu = ({ role }) => {
@@ -17,14 +18,14 @@ const DashMenu = ({ role }) => {
                     {menuItems.menuItems.map((menuItem, index) => (
                         <li key={index}>
                             {!menuItem.subItems ? (
-                                <a href={menuItem.link} className='bg-slate-800'>{menuItem.name}</a>
+                                <Link to="/"  href={menuItem.link} className='bg-slate-800'>{menuItem.name}</Link>
                             ) : (
                                 <details>
                                     <summary>{menuItem.name}</summary>
                                     <ul>
                                         {menuItem.subItems.map((subItem, subIndex) => (
                                             <li key={subIndex}>
-                                                <a href={subItem.link}>{subItem.name}</a>
+                                                <Link to="/"  href={subItem.link}>{subItem.name}</Link>
                                             </li>
                                         ))}
                                     </ul>

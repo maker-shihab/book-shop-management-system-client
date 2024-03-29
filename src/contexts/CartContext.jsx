@@ -1,4 +1,3 @@
-// CartContext.js
 import PropTypes from 'prop-types';
 import { createContext, useEffect, useState } from 'react';
 
@@ -23,7 +22,7 @@ export const CartProvider = ({ children }) => {
   };
 
   const removeFromCart = (itemId) => {
-    const updatedCart = cartItems.filter((item) => item.id !== itemId);
+    const updatedCart = cartItems.filter((item) => item._id !== itemId);
     setCartItems(updatedCart);
   };
 
