@@ -25,7 +25,7 @@ const DashMenu = ({ role }) => {
                                     <ul>
                                         {menuItem.subItems.map((subItem, subIndex) => (
                                             <li key={subIndex}>
-                                                <Link to="/"  href={subItem.link}>{subItem.name}</Link>
+                                                <Link to={subItem.link} className='focus-within:text-white focus-within:bg-slate-800'>{subItem.name}</Link>
                                             </li>
                                         ))}
                                     </ul>
