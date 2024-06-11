@@ -31,6 +31,7 @@ const AppRouter = () => {
       >
         <Route  element={<DashLayout />}>
           <Route path="/dashboard" element={<DashHome />} />
+          <Route path="/books/add" element={<DashAddProduct />} />
           <Route path="/dashproducts" element={<DashProducts />} />
           <Route path="/dashusers" element={<DashUsers />} />
           <Route path="/books/add" element={<DashAddProduct />} />
