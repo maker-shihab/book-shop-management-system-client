@@ -42,7 +42,7 @@ const DashNavber = () => {
                                         <span className="badge">New</span>
                                     </Link>
                                 </li>
-                                <li><a>Settings</a></li>
+                                <li><Link to="#">Settings</Link></li>
                                 <li><button type="button" onClick={handleLogoutButton}>Logout</button></li>
                             </ul>
                         </div>

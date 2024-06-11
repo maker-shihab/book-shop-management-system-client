@@ -11,7 +11,6 @@ export const WishlistProvider = ({ children }) => {
     if (storedWishlistItems) {
       setWishlistItems(storedWishlistItems);
     }
-    console.log(storedWishlistItems);
   }, []);
 
   useEffect(() => {
@@ -19,12 +18,12 @@ export const WishlistProvider = ({ children }) => {
   }, [wishlistItems]);
 
   const addToWishlist = (item) => {
-    setWishlistItems([...wishlistItems, item]);
+      setWishlistItems([...wishlistItems, item]);    
   };
 
   const removeFromWishlist = (itemId) => {
     const updatedWishlist = wishlistItems.filter((item) => item._id !== itemId);
-    setWishlistItems(updatedWishlist);
+    setWishlistItems(updatedWishlist);   
   };
 
   return (

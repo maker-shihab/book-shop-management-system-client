@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { FaStar } from "react-icons/fa";
 import { FaRegStarHalfStroke } from "react-icons/fa6";
+import Swal from "sweetalert2";
 import Footer from "../../components/Footer/Footer";
 import Header from "../../components/Header/Header";
 import { WishlistContext } from "../../contexts/WishlistContext";
@@ -8,8 +9,26 @@ import { WishlistContext } from "../../contexts/WishlistContext";
 
 const Wishlist = () => {
   const { wishlistItems, removeFromWishlist } = useContext(WishlistContext);
+
   const removeFromWishlistItem = (itemId) => {
-    removeFromWishlist(itemId);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to remove this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        removeFromWishlist(itemId);
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success"
+        });
+      }
+    });
   };
 
   return (
@@ -43,7 +62,7 @@ const Wishlist = () => {
                       </div>
                     </div>
                     <div className="card-actions gap-4 justify-center absolute bottom-6 left-4 right-4">
-                      <button className="btn btn-error text-white" onClick={() => removeFromWishlistItem(wishlistItems._id)}>Remove Wish Card</button>
+                      <button className="btn btn-error text-white" onClick={() => removeFromWishlistItem(item._id)}>Remove Wish Card</button>
                     </div>
                   </div>
                 </div>

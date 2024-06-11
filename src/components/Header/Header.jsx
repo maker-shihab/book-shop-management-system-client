@@ -1,14 +1,13 @@
 import { FaBlogger, FaFacebookF, FaInstagram, FaLinkedin, FaPhoneSquareAlt, FaSearch, } from "react-icons/fa";
+import { MdOutlineFavoriteBorder } from "react-icons/md";
 import { VscAccount } from "react-icons/vsc";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-
-import { MdOutlineFavoriteBorder } from "react-icons/md";
+import logo from "../../assets/img/logo.png";
 
 
 import { useContext } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import { TiShoppingCart } from "react-icons/ti";
-import logo from '../../assets/img/avater.png';
 import { CartContext } from "../../contexts/CartContext";
 import { WishlistContext } from "../../contexts/WishlistContext";
 import useAuth from "../../hooks/useAuth";
@@ -31,9 +30,7 @@ const Header = () => {
         <NavLink className={({ isActive, isPending }) => isPending ? "pending" : isActive ? "  pb-1 border-b border-black text-black font-semibold" : ""} to="/blogs">BLOG</NavLink>
         {
             isLoggedIn ? (
-                <button type="button" onClick={handleLogoutButton} className="border-b  border-transparent text-black font-semibold pb-1">
-                    LOGOUT
-                </button>
+                ""
             ) : (
                 <NavLink
                     className={({ isActive, isPending }) =>
@@ -51,7 +48,13 @@ const Header = () => {
         }
 
     </>
-
+    const handleWishlistButton = () => {
+        if (isLoggedIn) {
+            navigate('/wishlist');
+        } else {
+            navigate("/signin")
+        }
+    }
     return (
         <div>
             <Toaster
@@ -76,45 +79,47 @@ const Header = () => {
                     <div className=" container mx-auto">
                         <div className=" flex py-3 items-center">
                             <div className="w-3/12 flex items-center">
-                                <div className="dropdown dropdown-bottom">
-                                    <div tabIndex={0} role="button" className="btn btn-ghost m-1">
-                                        <img className="w-12 h-12 rounded-full" src={userInfo ? userInfo?.profileImage : logo} alt="avatar" />
-                                        <p className="ml-2 font-semibold">{userInfo ? `${userInfo?.firstName} ${userInfo?.lastName}` : ''}</p>
-                                    </div>
-                                    {
-                                        isLoggedIn ? <>
-                                            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
-                                                <li><Link to={`/profile`}>Profile</Link></li>
-                                                <li><Link to="/dashboard">Dashboard</Link></li>
-                                                <li><button type="button" onClick={handleLogoutButton}>Logout</button></li>
-                                            </ul>
-                                        </> : ""
-                                    }
-                                </div>
+                                <Link to="/"><img src={logo} alt="logo" /></Link>
                             </div>
-                            <div className="w-6/12 ">
+                            <div className="w-5/12 ">
                                 <div className="w-3/4 relative">
                                     <input className=" bg-[#f5f1f1a4] outline-0 border-none px-4 py-2 w-full rounded-full" type="text" placeholder="Search books" />
                                     <span className=" absolute right-4 top-3 text-[#6a6a6a]"><FaSearch /></span>
                                 </div>
                             </div>
-                            <div className="w-3/12 flex justify-end space-x-3">
-                                <div className="flex items-center pr-2 border-r">
-                                    <span><VscAccount /></span>
-                                    <h2 className=" ml-2 font-semibold">ACCOUND</h2>
-                                </div>
-                                <div className="flex items-center pr-2 border-r">
+                            <div className="w-4/12 flex justify-end space-x-3">
+                                {
+                                    isLoggedIn ? <>
+                                        <div className="dropdown dropdown-bottom">
+                                            <div tabIndex={0} role="button" className="m-1 flex items-center">
+                                                <img className="w-12 h-12 rounded-full" src={userInfo ? userInfo?.profileImage : logo} alt="avatar" />
+                                                <p className="ml-2 font-semibold">{userInfo ? `${userInfo?.firstName}` : ''}</p>
+                                            </div>
+                                            <ul tabIndex={0} className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52">
+                                                <li><Link to={`/profile`}>Profile</Link></li>
+                                                <li><Link to={`/dashboard`}>Dashboard</Link></li>
+                                                <li><button type="button" onClick={handleLogoutButton}>Logout</button></li>
+                                            </ul>
+                                        </div>
+                                    </> : <>
+                                        <Link to="/signin" className="flex items-center pr-2 border-r">
+                                            <span><VscAccount /></span>
+                                            <p className=" ml-2 font-semibold">ACCOUNT</p>
+                                        </Link>
+                                    </>
+                                }
+                                <div className="flex items-center pr-2">
                                     <Link to="/checkout" className="indicator cursor-pointer">
                                         <span className="text-xl"><TiShoppingCart /></span>
                                         <span className="badge badge-sm indicator-item">{cartItems?.length}</span>
                                     </Link>
                                 </div>
-                                <Link className="flex items-center ">
-                                    <Link to="/wishlist" className="indicator">
+                                <div className="flex items-center ">
+                                    <button type="button" onClick={handleWishlistButton} className="indicator">
                                         <span className="text-xl"><MdOutlineFavoriteBorder /></span>
                                         <span className="badge badge-sm indicator-item">{wishlistItems?.length}</span>
-                                    </Link>
-                                </Link>
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
